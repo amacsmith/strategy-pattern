@@ -41,6 +41,41 @@ class DuckTest extends TestCase
         }
     }
 
+    public function test_make_a_city_duck()
+    {
+        $cityDuck = DuckFactory::make(new CityDuck());
+
+        $this->assertInstanceOf(CityDuck::class, $cityDuck);
+    }
+
+    public function test_make_a_decoy_duck()
+    {
+        $decoyDuck = DuckFactory::make(new DecoyDuck());
+
+        $this->assertInstanceOf(DecoyDuck::class, $decoyDuck);
+    }
+
+    public function test_make_a_jet_duck()
+    {
+        $jetDuck = DuckFactory::make(new JetDuck());
+
+        $this->assertInstanceOf(JetDuck::class, $jetDuck);
+    }
+
+    public function test_make_a_rubber_duck()
+    {
+        $rubberDuck = DuckFactory::make(new RubberDuck());
+
+        $this->assertInstanceOf(RubberDuck::class, $rubberDuck);
+    }
+
+    public function test_make_a_wild_duck()
+    {
+        $wildDuck = DuckFactory::make(new WildDuck());
+
+        $this->assertInstanceOf(WildDuck::class, $wildDuck);
+    }
+
     public function test_can_make_a_duck_of_invalid_type()
     {
         $this->expectException(\TypeError::class);
