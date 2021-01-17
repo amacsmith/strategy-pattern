@@ -2,16 +2,16 @@
 
 namespace AMacSmith\StrategyPattern\Solution\Eat;
 
-class CityEat implements EatStrategy
+class CanNotEatBehavior implements EatBehaviorStrategy
 {
     private string $eat;
 
     /**
-     * CityEat constructor.
+     * CanNotEatBehavior constructor.
      */
     public function __construct()
     {
-        $this->eat = 'I eat things from the City';
+        $this->eat = 'I eat Nothing';
     }
 
     public function eat(): string

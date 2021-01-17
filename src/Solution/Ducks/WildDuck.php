@@ -2,18 +2,21 @@
 
 namespace AMacSmith\StrategyPattern\Solution\Ducks;
 
-use AMacSmith\StrategyPattern\Solution\Display\WildDuckDisplay;
-use AMacSmith\StrategyPattern\Solution\Eat\WildEat;
-use AMacSmith\StrategyPattern\Solution\Fly\NormalFly;
-use AMacSmith\StrategyPattern\Solution\Quack\NormalQuack;
-use AMacSmith\StrategyPattern\Solution\Type\WildDuckType;
+use AMacSmith\StrategyPattern\Solution\Display\WildDuckDisplayBehavior;
+use AMacSmith\StrategyPattern\Solution\Duck;
+use AMacSmith\StrategyPattern\Solution\Eat\WildEatBehavior;
+use AMacSmith\StrategyPattern\Solution\Fly\NormalFlyBehavior;
+use AMacSmith\StrategyPattern\Solution\Quack\NormalQuackBehavior;
+use AMacSmith\StrategyPattern\Solution\Type\WildDuckTypeBehavior;
 
-class WildDuck implements Duck
+class WildDuck extends Duck
 {
-    public function __construct(public WildDuckType $typeStrategy,
-                                public NormalQuack $quackStrategy,
-                                public NormalFly $flyStrategy,
-                                public WildEat $eatStrategy,
-                                public WildDuckDisplay $displayStrategy)
-    {}
+    public function __construct()
+    {
+        $this->typeBehavior = new WildDuckTypeBehavior;
+        $this->quackBehavior = new NormalQuackBehavior;
+        $this->flyBehavior = new NormalFlyBehavior;
+        $this->eatBehavior = new WildEatBehavior;
+        $this->displayBehavior = new WildDuckDisplayBehavior;
+    }
 }

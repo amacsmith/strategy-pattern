@@ -2,16 +2,16 @@
 
 namespace AMacSmith\StrategyPattern\Solution\Type;
 
-class CityDuckType implements TypeStrategy
+class DecoyDuckTypeBehavior implements TypeBehaviorStrategy
 {
     private string $type;
 
     /**
-     *  CityDuckType constructor.
+     *  DecoyDuckTypeBehavior constructor.
      */
     public function __construct()
     {
-        $this->type = "Duck type of City";
+        $this->type = "Duck type of Decoy";
     }
 
     public function type(): string

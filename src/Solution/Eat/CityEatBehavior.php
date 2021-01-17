@@ -1,18 +1,17 @@
 <?php
 
-
 namespace AMacSmith\StrategyPattern\Solution\Eat;
 
-class WildEat implements EatStrategy
+class CityEatBehavior implements EatBehaviorStrategy
 {
     private string $eat;
 
     /**
-     * WildEat constructor.
+     * CityEatBehavior constructor.
      */
     public function __construct()
     {
-        $this->eat = 'I eat things from the Wild';
+        $this->eat = 'I eat things from the City';
     }
 
     public function eat(): string

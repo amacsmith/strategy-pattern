@@ -2,12 +2,12 @@
 
 namespace AMacSmith\StrategyPattern\Solution\Fly;
 
-class NormalFly implements FlyStrategy
+class NormalFlyBehavior implements FlyBehaviorStrategy
 {
     private string $fly;
 
     /**
-     * NormalFly constructor.
+     * NormalFlyBehavior constructor.
      */
     public function __construct()
     {

@@ -2,7 +2,7 @@
 
 namespace AMacSmith\StrategyPattern\Solution\Quack;
 
-interface QuackStrategy
+interface QuackBehaviorStrategy
 {
     public function quack(): string;
 }

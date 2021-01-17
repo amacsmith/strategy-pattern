@@ -2,7 +2,7 @@
 
 namespace AMacSmith\StrategyPattern\Solution\Display;
 
-interface DisplayStrategy
+interface DisplayBehaviorStrategy
 {
     public function display(): string;
 }

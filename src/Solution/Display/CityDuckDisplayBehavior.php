@@ -2,7 +2,7 @@
 
 namespace AMacSmith\StrategyPattern\Solution\Display;
 
-class DecoyDuckDisplay implements DisplayStrategy
+class CityDuckDisplayBehavior implements DisplayBehaviorStrategy
 {
     private string $display;
 
@@ -11,7 +11,7 @@ class DecoyDuckDisplay implements DisplayStrategy
      */
     public function __construct()
     {
-        $this->display = 'I look like a Decoy Duck';
+        $this->display = 'I look like a City Duck';
     }
 
     public function display(): string

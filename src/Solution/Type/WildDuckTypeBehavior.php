@@ -2,16 +2,16 @@
 
 namespace AMacSmith\StrategyPattern\Solution\Type;
 
-class RubberDuckType implements TypeStrategy
+class WildDuckTypeBehavior implements TypeBehaviorStrategy
 {
     private string $type;
 
     /**
-     *  RubberDuckType constructor.
+     *  WildDuckTypeBehavior constructor.
      */
     public function __construct()
     {
-        $this->type = "Duck type of Rubber";
+        $this->type = "Duck type of Wild";
     }
 
     public function type(): string

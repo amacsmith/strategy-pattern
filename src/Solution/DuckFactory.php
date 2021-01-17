@@ -2,38 +2,36 @@
 
 namespace AMacSmith\StrategyPattern\Solution;
 
-use AMacSmith\StrategyPattern\Solution\Display\CityDuckDisplay;
-use AMacSmith\StrategyPattern\Solution\Display\DecoyDuckDisplay;
-use AMacSmith\StrategyPattern\Solution\Display\JetDuckDisplay;
-use AMacSmith\StrategyPattern\Solution\Display\RubberDuckDisplay;
-use AMacSmith\StrategyPattern\Solution\Display\WildDuckDisplay;
-use AMacSmith\StrategyPattern\Solution\Fly\JetFly;
-use AMacSmith\StrategyPattern\Solution\Type\CityDuckType;
-use AMacSmith\StrategyPattern\Solution\Type\DecoyDuckType;
-use AMacSmith\StrategyPattern\Solution\Type\JetDuckType;
-use AMacSmith\StrategyPattern\Solution\Type\RubberDuckType;
-use AMacSmith\StrategyPattern\Solution\Type\WildDuckType;
-use AMacSmith\StrategyPattern\Solution\Eat\CanNotEat;
-use AMacSmith\StrategyPattern\Solution\Eat\CityEat;
-use AMacSmith\StrategyPattern\Solution\Eat\WildEat;
-use AMacSmith\StrategyPattern\Solution\Fly\CanNotFly;
-use AMacSmith\StrategyPattern\Solution\Fly\NormalFly;
-use AMacSmith\StrategyPattern\Solution\Quack\DecoyQuack;
-use AMacSmith\StrategyPattern\Solution\Quack\CanNotQuack;
-use AMacSmith\StrategyPattern\Solution\Quack\NormalQuack;
+use AMacSmith\StrategyPattern\Solution\Display\CityDuckDisplayBehavior;
+use AMacSmith\StrategyPattern\Solution\Display\DecoyDuckDisplayBehavior;
+use AMacSmith\StrategyPattern\Solution\Display\JetDuckDisplayBehavior;
+use AMacSmith\StrategyPattern\Solution\Display\RubberDuckDisplayBehavior;
+use AMacSmith\StrategyPattern\Solution\Display\WildDuckDisplayBehavior;
+use AMacSmith\StrategyPattern\Solution\Ducks\CityDuck;
+use AMacSmith\StrategyPattern\Solution\Ducks\DecoyDuck;
+use AMacSmith\StrategyPattern\Solution\Ducks\JetDuck;
+use AMacSmith\StrategyPattern\Solution\Ducks\RubberDuck;
+use AMacSmith\StrategyPattern\Solution\Ducks\WildDuck;
+use AMacSmith\StrategyPattern\Solution\Fly\JetFlyBehavior;
+use AMacSmith\StrategyPattern\Solution\Type\CityDuckTypeBehavior;
+use AMacSmith\StrategyPattern\Solution\Type\DecoyDuckTypeBehavior;
+use AMacSmith\StrategyPattern\Solution\Type\JetDuckTypeBehavior;
+use AMacSmith\StrategyPattern\Solution\Type\RubberDuckTypeBehavior;
+use AMacSmith\StrategyPattern\Solution\Type\WildDuckTypeBehavior;
+use AMacSmith\StrategyPattern\Solution\Eat\CanNotEatBehavior;
+use AMacSmith\StrategyPattern\Solution\Eat\CityEatBehavior;
+use AMacSmith\StrategyPattern\Solution\Eat\WildEatBehavior;
+use AMacSmith\StrategyPattern\Solution\Fly\CanNotFlyBehavior;
+use AMacSmith\StrategyPattern\Solution\Fly\NormalFlyBehavior;
+use AMacSmith\StrategyPattern\Solution\Quack\DecoyQuackBehavior;
+use AMacSmith\StrategyPattern\Solution\Quack\CanNotQuackBehavior;
+use AMacSmith\StrategyPattern\Solution\Quack\NormalQuackBehavior;
 use RuntimeException;
 
 class DuckFactory
 {
-    public static function make($type)
+    public static function make(Duck $duck): \AMacSmith\StrategyPattern\Solution\Duck
     {
-        return match (strtolower($type)) {
-            'city' => new Duck(new CityDuckType, new NormalQuack, new NormalFly, new CityEat, new CityDuckDisplay),
-            'wild' => new Duck(new WildDuckType, new NormalQuack, new NormalFly, new WildEat, new WildDuckDisplay),
-            'rubber' => new Duck(new RubberDuckType, new CanNotQuack, new CanNotFly, new CanNotEat, new RubberDuckDisplay),
-            'decoy' => new Duck(new DecoyDuckType, new DecoyQuack, new CanNotFly, new CanNotEat, new DecoyDuckDisplay),
-            'jet' => new Duck(new JetDuckType, new NormalQuack, new JetFly, new CityEat, new JetDuckDisplay),
-            default => throw new RuntimeException('The factory make needs a type of either city, wild, rubber, or decoy. However, ' . $type . ' was given.' . PHP_EOL),
-        };
+        return new $duck();
     }
 }

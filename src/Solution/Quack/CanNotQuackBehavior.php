@@ -2,16 +2,16 @@
 
 namespace AMacSmith\StrategyPattern\Solution\Quack;
 
-class DecoyQuack implements QuackStrategy
+class CanNotQuackBehavior implements QuackBehaviorStrategy
 {
     private string $quack;
 
     /**
-     * DecoyQuack constructor.
+     * DoNotQuack constructor.
      */
     public function __construct()
     {
-        $this->quack = 'I quack like a Decoy';
+        $this->quack = 'I don\'t quack';
     }
 
     public function quack(): string

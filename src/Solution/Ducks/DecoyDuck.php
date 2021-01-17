@@ -2,18 +2,21 @@
 
 namespace AMacSmith\StrategyPattern\Solution\Ducks;
 
-use AMacSmith\StrategyPattern\Solution\Display\DecoyDuckDisplay;
-use AMacSmith\StrategyPattern\Solution\Eat\CanNotEat;
-use AMacSmith\StrategyPattern\Solution\Fly\CanNotFly;
-use AMacSmith\StrategyPattern\Solution\Quack\DecoyQuack;
-use AMacSmith\StrategyPattern\Solution\Type\DecoyDuckType;
+use AMacSmith\StrategyPattern\Solution\Display\DecoyDuckDisplayBehavior;
+use AMacSmith\StrategyPattern\Solution\Duck;
+use AMacSmith\StrategyPattern\Solution\Eat\CanNotEatBehavior;
+use AMacSmith\StrategyPattern\Solution\Fly\CanNotFlyBehavior;
+use AMacSmith\StrategyPattern\Solution\Quack\DecoyQuackBehavior;
+use AMacSmith\StrategyPattern\Solution\Type\DecoyDuckTypeBehavior;
 
-class DecoyDuck implements Duck
+class DecoyDuck extends Duck
 {
-    public function __construct(public DecoyDuckType $typeStrategy,
-                                public DecoyQuack $quackStrategy,
-                                public CanNotFly $flyStrategy,
-                                public CanNotEat $eatStrategy,
-                                public DecoyDuckDisplay $displayStrategy)
-    {}
+    public function __construct()
+    {
+        $this->typeBehavior = new DecoyDuckTypeBehavior();
+        $this->quackBehavior = new DecoyQuackBehavior();
+        $this->flyBehavior = new CanNotFlyBehavior();
+        $this->eatBehavior = new CanNotEatBehavior();
+        $this->displayBehavior = new DecoyDuckDisplayBehavior();
+    }
 }

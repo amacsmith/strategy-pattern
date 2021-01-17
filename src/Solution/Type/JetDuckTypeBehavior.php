@@ -1,17 +1,19 @@
 <?php
 
+
 namespace AMacSmith\StrategyPattern\Solution\Type;
 
-class DecoyDuckType implements TypeStrategy
+
+class JetDuckTypeBehavior implements \AMacSmith\StrategyPattern\Solution\Type\TypeBehaviorStrategy
 {
     private string $type;
 
     /**
-     *  DecoyDuckType constructor.
+     *  DecoyDuckTypeBehavior constructor.
      */
     public function __construct()
     {
-        $this->type = "Duck type of Decoy";
+        $this->type = "Duck type of Jet";
     }
 
     public function type(): string

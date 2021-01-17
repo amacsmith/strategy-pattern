@@ -2,12 +2,12 @@
 
 namespace AMacSmith\StrategyPattern\Solution\Display;
 
-class RubberDuckDisplay implements DisplayStrategy
+class RubberDuckDisplayBehavior implements DisplayBehaviorStrategy
 {
     private string $display;
 
     /**
-     * RubberDuckDisplay constructor.
+     * RubberDuckDisplayBehavior constructor.
      */
     public function __construct()
     {

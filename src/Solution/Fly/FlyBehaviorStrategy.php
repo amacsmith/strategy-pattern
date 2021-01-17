@@ -2,7 +2,7 @@
 
 namespace AMacSmith\StrategyPattern\Solution\Fly;
 
-interface FlyStrategy
+interface FlyBehaviorStrategy
 {
     public function fly(): string;
 }

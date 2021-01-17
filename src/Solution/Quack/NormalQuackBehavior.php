@@ -2,16 +2,16 @@
 
 namespace AMacSmith\StrategyPattern\Solution\Quack;
 
-class CanNotQuack implements QuackStrategy
+class NormalQuackBehavior implements QuackBehaviorStrategy
 {
     private string $quack;
 
     /**
-     * DoNotQuack constructor.
+     * NormalQuackBehavior constructor.
      */
     public function __construct()
     {
-        $this->quack = 'I don\'t quack';
+        $this->quack = 'I quack like a Duck';
     }
 
     public function quack(): string

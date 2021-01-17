@@ -2,7 +2,7 @@
 
 namespace AMacSmith\StrategyPattern\Solution\Type;
 
-interface TypeStrategy
+interface TypeBehaviorStrategy
 {
     public function type(): string;
 }

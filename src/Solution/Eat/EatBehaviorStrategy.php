@@ -2,7 +2,7 @@
 
 namespace AMacSmith\StrategyPattern\Solution\Eat;
 
-interface EatStrategy
+interface EatBehaviorStrategy
 {
     public function eat(): string;
 }

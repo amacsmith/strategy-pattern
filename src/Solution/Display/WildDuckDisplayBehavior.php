@@ -2,12 +2,12 @@
 
 namespace AMacSmith\StrategyPattern\Solution\Display;
 
-class WildDuckDisplay implements DisplayStrategy
+class WildDuckDisplayBehavior implements DisplayBehaviorStrategy
 {
     private string $display;
 
     /**
-     * WildDuckDisplay constructor.
+     * WildDuckDisplayBehavior constructor.
      */
     public function __construct()
     {

@@ -1,10 +1,8 @@
 <?php
 
-
 namespace AMacSmith\StrategyPattern\Solution\Display;
 
-
-class JetDuckDisplay implements \AMacSmith\StrategyPattern\Solution\Display\DisplayStrategy
+class DecoyDuckDisplayBehavior implements DisplayBehaviorStrategy
 {
     private string $display;
 
@@ -13,7 +11,7 @@ class JetDuckDisplay implements \AMacSmith\StrategyPattern\Solution\Display\Disp
      */
     public function __construct()
     {
-        $this->display = 'I look like a Jet Duck';
+        $this->display = 'I look like a Decoy Duck';
     }
 
     public function display(): string

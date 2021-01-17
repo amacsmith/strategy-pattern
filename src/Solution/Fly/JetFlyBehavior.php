@@ -1,17 +1,19 @@
 <?php
 
+
 namespace AMacSmith\StrategyPattern\Solution\Fly;
 
-class CanNotFly implements FlyStrategy
+
+class JetFlyBehavior implements FlyBehaviorStrategy
 {
     private string $fly;
 
     /**
-     * CanNotFly constructor.
+     * CanNotFlyBehavior constructor.
      */
     public function __construct()
     {
-        $this->fly = 'I am flight Less';
+        $this->fly = 'I use a Jet to Fly';
     }
 
     public function fly(): string

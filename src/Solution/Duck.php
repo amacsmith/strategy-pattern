@@ -2,51 +2,53 @@
 
 namespace AMacSmith\StrategyPattern\Solution;
 
-use AMacSmith\StrategyPattern\Solution\Display\DisplayStrategy;
-use AMacSmith\StrategyPattern\Solution\Type\TypeStrategy;
-use AMacSmith\StrategyPattern\Solution\Eat\EatStrategy;
-use AMacSmith\StrategyPattern\Solution\Fly\FlyStrategy;
-use AMacSmith\StrategyPattern\Solution\Quack\QuackStrategy;
+use AMacSmith\StrategyPattern\Solution\Display\DisplayBehaviorStrategy;
+use AMacSmith\StrategyPattern\Solution\Type\TypeBehaviorStrategy;
+use AMacSmith\StrategyPattern\Solution\Eat\EatBehaviorStrategy;
+use AMacSmith\StrategyPattern\Solution\Fly\FlyBehaviorStrategy;
+use AMacSmith\StrategyPattern\Solution\Quack\QuackBehaviorStrategy;
 
-class Duck
+abstract class Duck
 {
     /**
      * Duck constructor.
-     * @param TypeStrategy $typeStrategy
-     * @param QuackStrategy $quackStrategy
-     * @param FlyStrategy $flyStrategy
-     * @param EatStrategy $eatStrategy
-     * @param DisplayStrategy $displayStrategy
+     * @param TypeBehaviorStrategy $typeBehavior
+     * @param QuackBehaviorStrategy $quackBehavior
+     * @param FlyBehaviorStrategy $flyBehavior
+     * @param EatBehaviorStrategy $eatBehavior
+     * @param DisplayBehaviorStrategy $displayBehavior
      */
-    public function __construct(public TypeStrategy $typeStrategy,
-                                public QuackStrategy $quackStrategy,
-                                public FlyStrategy $flyStrategy,
-                                public EatStrategy $eatStrategy,
-                                public DisplayStrategy $displayStrategy)
+    public function __construct(public TypeBehaviorStrategy $typeBehavior,
+                                public QuackBehaviorStrategy $quackBehavior,
+                                public FlyBehaviorStrategy $flyBehavior,
+                                public EatBehaviorStrategy $eatBehavior,
+                                public DisplayBehaviorStrategy $displayBehavior)
     {}
 
-    public function quack(): void
+    public function performQuack(): void
     {
-        echo $this->quackStrategy->quack().PHP_EOL;
+        echo $this->quackBehavior->quack().PHP_EOL;
     }
 
-    public function display(): void
+    public function performDisplay(): void
     {
-        echo $this->displayStrategy->display().PHP_EOL;
+        echo $this->displayBehavior->display().PHP_EOL;
     }
 
-    public function fly(): void
+    public function performFly(): void
     {
-        echo $this->flyStrategy->fly().PHP_EOL;
+        echo $this->flyBehavior->fly().PHP_EOL;
     }
 
-    public function eat(): void
+    public function performEat(): void
     {
-        echo $this->eatStrategy->eat().PHP_EOL;
+        echo $this->eatBehavior->eat().PHP_EOL;
     }
 
-    public function type(): void
+    public function performType(): void
     {
-        echo $this->typeStrategy->type().' Duck'.PHP_EOL;
+
+
+        echo $this->typeBehavior->type().' Duck'.PHP_EOL;
     }
 }
