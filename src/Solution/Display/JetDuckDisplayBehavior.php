@@ -4,7 +4,7 @@
 namespace AMacSmith\StrategyPattern\Solution\Display;
 
 
-class JetDuckDisplayBehavior implements \AMacSmith\StrategyPattern\Solution\Display\DisplayBehaviorStrategy
+class JetDuckDisplayBehavior implements DisplayBehaviorStrategy
 {
     private string $display;
 

@@ -45,21 +45,21 @@ class DuckTest extends TestCase
     {
         $cityDuck = DuckFactory::make(new CityDuck());
 
-        $this->assertInstanceOf(CityDuck::class, $cityDuck);
+        $this->assertInstanceOf(Duck::class, $cityDuck);
     }
 
     public function test_make_a_decoy_duck()
     {
         $decoyDuck = DuckFactory::make(new DecoyDuck());
 
-        $this->assertInstanceOf(DecoyDuck::class, $decoyDuck);
+        $this->assertInstanceOf(Duck::class, $decoyDuck);
     }
 
     public function test_custom_duck_can_have_runtime_behaviors()
     {
         $customDuck = new CustomDuck(new DecoyDuckTypeBehavior, new NormalQuackBehavior, new JetFlyBehavior, new CanNotEatBehavior, new CityDuckDisplayBehavior);
 
-        $this->assertInstanceOf(CustomDuck::class, $customDuck);
+        $this->assertInstanceOf(Duck::class, $customDuck);
         $this->assertEquals('Duck type of Decoy', $customDuck->performType());
         $this->assertEquals('I quack like a Duck', $customDuck->performQuack());
         $this->assertEquals('I use a Jet to Fly', $customDuck->performFly());
@@ -71,21 +71,21 @@ class DuckTest extends TestCase
     {
         $jetDuck = DuckFactory::make(new JetDuck());
 
-        $this->assertInstanceOf(JetDuck::class, $jetDuck);
+        $this->assertInstanceOf(Duck::class, $jetDuck);
     }
 
     public function test_make_a_rubber_duck()
     {
         $rubberDuck = DuckFactory::make(new RubberDuck());
 
-        $this->assertInstanceOf(RubberDuck::class, $rubberDuck);
+        $this->assertInstanceOf(Duck::class, $rubberDuck);
     }
 
     public function test_make_a_wild_duck()
     {
         $wildDuck = DuckFactory::make(new WildDuck());
 
-        $this->assertInstanceOf(WildDuck::class, $wildDuck);
+        $this->assertInstanceOf(Duck::class, $wildDuck);
     }
 
     public function test_can_make_a_duck_of_invalid_type()
