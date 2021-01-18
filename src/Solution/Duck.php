@@ -25,30 +25,28 @@ abstract class Duck
                                 public DisplayBehaviorStrategy $displayBehavior)
     {}
 
-    public function performQuack(): void
+    public function performQuack(): string
     {
-        echo $this->quackBehavior->quack().PHP_EOL;
+        return $this->quackBehavior->quack();
     }
 
-    public function performDisplay(): void
+    public function performDisplay(): string
     {
-        echo $this->displayBehavior->display().PHP_EOL;
+        return $this->displayBehavior->display();
     }
 
-    public function performFly(): void
+    public function performFly(): string
     {
-        echo $this->flyBehavior->fly().PHP_EOL;
+        return $this->flyBehavior->fly();
     }
 
-    public function performEat(): void
+    public function performEat(): string
     {
-        echo $this->eatBehavior->eat().PHP_EOL;
+        return $this->eatBehavior->eat();
     }
 
-    public function performType(): void
+    public function performType(): string
     {
-
-
-        echo $this->typeBehavior->type().' Duck'.PHP_EOL;
+        return $this->typeBehavior->type();
     }
 }
