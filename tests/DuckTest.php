@@ -80,17 +80,6 @@ class DuckTest extends TestCase
     {
         $this->expectException(\TypeError::class);
 
-        $ducks = [
-            DuckFactory::make(new MallardDuck())
-        ];
-
-        foreach ($ducks as $duck) {
-            $duck->type();
-            $duck->fly();
-            $duck->display();
-            $duck->quack();
-            $duck->eat();
-            echo PHP_EOL;
-        }
+        $ducks = DuckFactory::make(new MallardDuck());
     }
 }
