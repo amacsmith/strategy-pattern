@@ -8,6 +8,8 @@ env:
     - COMPOSER_FLAGS="--prefer-lowest"
     - COMPOSER_FLAGS=""
 
+before_install: phpenv config-add travisphpconfig.ini
+
 before_script:
   - travis_retry composer update ${COMPOSER_FLAGS}
 
