@@ -9,8 +9,8 @@ env:
     - COMPOSER_FLAGS=""
 
 before_script:
-  - XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-text
   - travis_retry composer update ${COMPOSER_FLAGS}
+  - XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-text
 
 script:
   - vendor/bin/phpunit --coverage-clover coverage.xml
