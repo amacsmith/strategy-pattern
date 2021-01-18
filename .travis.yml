@@ -10,10 +10,9 @@ env:
 
 before_script:
   - travis_retry composer update ${COMPOSER_FLAGS}
-  - XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-text
 
 script:
   - vendor/bin/phpunit --coverage-clover coverage.xml
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -f ./build/coverage.txt
+  - bash <(curl -s https://codecov.io/bash)
