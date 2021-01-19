@@ -28,64 +28,60 @@ class DuckTest extends TestCase
         $ducks = [];
 
         foreach($duckTypes as $type) {
-            $ducks[] = DuckFactory::make(new $type());
+            $ducks[] = DuckFactory::make($type);
         }
 
         foreach ($ducks as $duck) {
-            $duck->performType();
-            $duck->performFly();
-            $duck->performDisplay();
-            $duck->performQuack();
-            $duck->performEat();
+            echo $duck->performType().PHP_EOL;
+            echo $duck->performFly().PHP_EOL;
+            echo $duck->performDisplay().PHP_EOL;
+            echo $duck->performQuack().PHP_EOL;
+            echo $duck->performEat().PHP_EOL;
+            echo PHP_EOL;
             $this->assertInstanceOf(Duck::class, $duck);
         }
     }
 
     public function test_make_a_city_duck()
     {
-        $cityDuck = DuckFactory::make(new CityDuck());
+        $cityDuck = DuckFactory::make(DuckTypes::CITY);
 
-        $this->assertInstanceOf(Duck::class, $cityDuck);
+        $this->assertInstanceOf(CityDuck::class, $cityDuck);
     }
 
     public function test_make_a_decoy_duck()
     {
-        $decoyDuck = DuckFactory::make(new DecoyDuck());
+        $decoyDuck = DuckFactory::make(DuckTypes::DECOY);
 
-        $this->assertInstanceOf(Duck::class, $decoyDuck);
-    }
-
-    public function test_custom_duck_can_have_runtime_behaviors()
-    {
-        $customDuck = new CustomDuck(new DecoyDuckTypeBehavior, new NormalQuackBehavior, new JetFlyBehavior, new CanNotEatBehavior, new CityDuckDisplayBehavior);
-
-        $this->assertInstanceOf(Duck::class, $customDuck);
-        $this->assertEquals('Duck type of Decoy', $customDuck->performType());
-        $this->assertEquals('I quack like a Duck', $customDuck->performQuack());
-        $this->assertEquals('I use a Jet to Fly', $customDuck->performFly());
-        $this->assertEquals('I eat Nothing', $customDuck->performEat());
-        $this->assertEquals('I look like a City Duck', $customDuck->performDisplay());
+        $this->assertInstanceOf(DecoyDuck::class, $decoyDuck);
     }
 
     public function test_make_a_jet_duck()
     {
-        $jetDuck = DuckFactory::make(new JetDuck());
+        $jetDuck = DuckFactory::make(DuckTypes::JET);
 
-        $this->assertInstanceOf(Duck::class, $jetDuck);
+        $this->assertInstanceOf(JetDuck::class, $jetDuck);
     }
 
     public function test_make_a_rubber_duck()
     {
-        $rubberDuck = DuckFactory::make(new RubberDuck());
+        $rubberDuck = DuckFactory::make(DuckTypes::RUBBER);
 
-        $this->assertInstanceOf(Duck::class, $rubberDuck);
+        $this->assertInstanceOf(RubberDuck::class, $rubberDuck);
     }
 
     public function test_make_a_wild_duck()
     {
-        $wildDuck = DuckFactory::make(new WildDuck());
+        $wildDuck = DuckFactory::make(DuckTypes::WILD);
 
-        $this->assertInstanceOf(Duck::class, $wildDuck);
+        $this->assertInstanceOf(WildDuck::class, $wildDuck);
+    }
+
+    public function test_make_a_mallard_duck()
+    {
+        $mallardDuck = DuckFactory::make(DuckTypes::MALLARD);
+
+        $this->assertInstanceOf(MallardDuck::class, $mallardDuck);
     }
 
     public function test_can_make_a_duck_of_invalid_type()
@@ -103,5 +99,17 @@ class DuckTest extends TestCase
             $duck->performQuack();
             $duck->performEat();
         }
+    }
+
+    public function test_custom_duck_can_have_runtime_behaviors()
+    {
+        $customDuck = new CustomDuck(new DecoyDuckTypeBehavior, new NormalQuackBehavior, new JetFlyBehavior, new CanNotEatBehavior, new CityDuckDisplayBehavior);
+
+        $this->assertInstanceOf(Duck::class, $customDuck);
+        $this->assertEquals('Duck type of Decoy', $customDuck->performType());
+        $this->assertEquals('I quack like a Duck', $customDuck->performQuack());
+        $this->assertEquals('I use a Jet to Fly', $customDuck->performFly());
+        $this->assertEquals('I eat Nothing', $customDuck->performEat());
+        $this->assertEquals('I look like a City Duck', $customDuck->performDisplay());
     }
 }

@@ -2,26 +2,25 @@
 
 namespace AMacSmith\StrategyPattern\Solution;
 
-use AMacSmith\StrategyPattern\Solution\Display\DisplayBehaviorStrategy;
-use AMacSmith\StrategyPattern\Solution\Ducks\CustomDuck;
-use AMacSmith\StrategyPattern\Solution\Eat\EatBehaviorStrategy;
-use AMacSmith\StrategyPattern\Solution\Fly\FlyBehaviorStrategy;
-use AMacSmith\StrategyPattern\Solution\Quack\QuackBehaviorStrategy;
-use AMacSmith\StrategyPattern\Solution\Type\TypeBehaviorStrategy;
+use AMacSmith\StrategyPattern\Solution\Ducks\CityDuck;
+use AMacSmith\StrategyPattern\Solution\Ducks\DecoyDuck;
+use AMacSmith\StrategyPattern\Solution\Ducks\JetDuck;
+use AMacSmith\StrategyPattern\Solution\Ducks\MallardDuck;
+use AMacSmith\StrategyPattern\Solution\Ducks\RubberDuck;
+use AMacSmith\StrategyPattern\Solution\Ducks\WildDuck;
 
 class DuckFactory
 {
-    public static function make(Duck $duck): Duck
+    public static function make(string $duckType): Duck
     {
-        return new $duck();
-    }
-
-    public static function makeCustom(TypeBehaviorStrategy $typeBehavior,
-                                      QuackBehaviorStrategy $quackBehavior,
-                                      FlyBehaviorStrategy $flyBehavior,
-                                      EatBehaviorStrategy $eatBehavior,
-                                      DisplayBehaviorStrategy $displayBehavior)
-    {
-        return new CustomDuck($typeBehavior, $quackBehavior, $flyBehavior, $eatBehavior, $displayBehavior);
+        return match ($duckType) {
+            DuckTypes::CITY => new CityDuck(),
+            DuckTypes::WILD => new WildDuck(),
+            DuckTypes::RUBBER => new RubberDuck(),
+            DuckTypes::DECOY => new DecoyDuck(),
+            DuckTypes::JET => new JetDuck(),
+            DuckTypes::MALLARD => new MallardDuck(),
+            default => throw new \Exception('Invalid duck type given ' . $duckType),
+        };
     }
 }
