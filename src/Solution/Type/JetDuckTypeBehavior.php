@@ -4,7 +4,7 @@
 namespace AMacSmith\StrategyPattern\Solution\Type;
 
 
-class JetDuckTypeBehavior implements \AMacSmith\StrategyPattern\Solution\Type\TypeBehaviorStrategy
+class JetDuckTypeBehavior implements TypeBehaviorStrategy
 {
     private string $type;
 

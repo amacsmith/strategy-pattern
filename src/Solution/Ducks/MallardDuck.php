@@ -5,12 +5,13 @@ namespace AMacSmith\StrategyPattern\Solution\Ducks;
 
 
 use AMacSmith\StrategyPattern\Solution\Display\RubberDuckDisplayBehavior;
+use AMacSmith\StrategyPattern\Solution\Duck;
 use AMacSmith\StrategyPattern\Solution\Eat\CanNotEatBehavior;
 use AMacSmith\StrategyPattern\Solution\Fly\CanNotFlyBehavior;
 use AMacSmith\StrategyPattern\Solution\Quack\CanNotQuackBehavior;
 use AMacSmith\StrategyPattern\Solution\Type\RubberDuckTypeBehavior;
 
-class MallardDuck
+class MallardDuck extends Duck
 {
     public function __construct()
     {
