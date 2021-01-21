@@ -16,22 +16,16 @@ class DuckFactory
         switch ($duckType) {
             case DuckTypes::CITY:
                 return new CityDuck();
-                break;
             case DuckTypes::WILD:
                 return new WildDuck();
-                break;
             case DuckTypes::RUBBER:
                 return new RubberDuck();
-                break;
             case DuckTypes::DECOY:
                 return new DecoyDuck();
-                break;
             case DuckTypes::JET:
                 return new JetDuck();
-                break;
             case DuckTypes::MALLARD:
                 return new MallardDuck();
-                break;
             default:
                 throw new \Exception('Invalid duck type given '.$duckType);
         }
