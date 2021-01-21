@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AMacSmith\StrategyPattern\Solution\Type;
-
 
 class JetDuckTypeBehavior implements TypeBehaviorStrategy
 {
@@ -13,7 +11,7 @@ class JetDuckTypeBehavior implements TypeBehaviorStrategy
      */
     public function __construct()
     {
-        $this->type = "Duck type of Jet";
+        $this->type = 'Duck type of Jet';
     }
 
     public function type(): string

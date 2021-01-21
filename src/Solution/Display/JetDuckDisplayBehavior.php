@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AMacSmith\StrategyPattern\Solution\Display;
-
 
 class JetDuckDisplayBehavior implements DisplayBehaviorStrategy
 {

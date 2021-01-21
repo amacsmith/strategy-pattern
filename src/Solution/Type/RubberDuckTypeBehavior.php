@@ -11,7 +11,7 @@ class RubberDuckTypeBehavior implements TypeBehaviorStrategy
      */
     public function __construct()
     {
-        $this->type = "Duck type of Rubber";
+        $this->type = 'Duck type of Rubber';
     }
 
     public function type(): string
