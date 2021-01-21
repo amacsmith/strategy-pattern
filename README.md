@@ -6,6 +6,7 @@ Implementation of the strategy pattern given a problem. There is also some added
 
 [![codecov](https://codecov.io/gh/amacsmith/strategy-pattern/branch/master/graph/badge.svg)](https://codecov.io/gh/amacsmith/strategy-pattern)
 
+[![StyleCI](https://github.styleci.io/repos/330454150/shield?branch=master)]
 
 Usage
 

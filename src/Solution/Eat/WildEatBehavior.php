@@ -1,6 +1,5 @@
 <?php
 
-
 namespace AMacSmith\StrategyPattern\Solution\Eat;
 
 class WildEatBehavior implements EatBehaviorStrategy

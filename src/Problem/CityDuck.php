@@ -1,8 +1,8 @@
 <?php
 
+// @codeCoverageIgnoreStart
 
 namespace AMacSmith\StrategyPattern\Problem;
-
 
 class CityDuck extends Duck
 {
