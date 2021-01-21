@@ -2,10 +2,10 @@
 
 namespace AMacSmith\StrategyPattern\Solution;
 
+use AMacSmith\StrategyPattern\Solution\Quack\QuackBehaviorStrategy;
 use AMacSmith\StrategyPattern\Solution\Display\DisplayBehaviorStrategy;
 use AMacSmith\StrategyPattern\Solution\Eat\EatBehaviorStrategy;
 use AMacSmith\StrategyPattern\Solution\Fly\FlyBehaviorStrategy;
-use AMacSmith\StrategyPattern\Solution\Quack\QuackBehaviorStrategy;
 use AMacSmith\StrategyPattern\Solution\Type\TypeBehaviorStrategy;
 
 class Duck
