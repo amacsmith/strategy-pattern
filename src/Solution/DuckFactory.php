@@ -13,7 +13,7 @@ class DuckFactory
 {
     public static function make(string $duckType): Duck
     {
-        switch($duckType) {
+        switch ($duckType) {
             case DuckTypes::CITY:
                 return new CityDuck();
                 break;
@@ -33,7 +33,7 @@ class DuckFactory
                 return new MallardDuck();
                 break;
             default:
-                throw new \Exception('Invalid duck type given ' . $duckType);
+                throw new \Exception('Invalid duck type given '.$duckType);
         }
     }
 }
