@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AMacSmith\StrategyPattern\Solution\Ducks;
-
 
 use AMacSmith\StrategyPattern\Solution\Display\RubberDuckDisplayBehavior;
 use AMacSmith\StrategyPattern\Solution\Duck;

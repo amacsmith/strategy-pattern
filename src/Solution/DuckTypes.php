@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AMacSmith\StrategyPattern\Solution;
-
 
 use AMacSmith\StrategyPattern\Solution\Ducks\CityDuck;
 use AMacSmith\StrategyPattern\Solution\Ducks\DecoyDuck;
@@ -19,13 +17,13 @@ class DuckTypes
         RubberDuck::class,
         DecoyDuck::class,
         JetDuck::class,
-        MallardDuck::class
+        MallardDuck::class,
     ];
 
-    CONST CITY=CityDuck::class;
-    CONST WILD=WildDuck::class;
-    CONST RUBBER=RubberDuck::class;
-    CONST DECOY=DecoyDuck::class;
-    CONST JET=JetDuck::class;
-    CONST MALLARD=MallardDuck::class;
+    const CITY = CityDuck::class;
+    const WILD = WildDuck::class;
+    const RUBBER = RubberDuck::class;
+    const DECOY = DecoyDuck::class;
+    const JET = JetDuck::class;
+    const MALLARD = MallardDuck::class;
 }

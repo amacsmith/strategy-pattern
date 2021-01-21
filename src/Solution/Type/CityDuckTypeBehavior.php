@@ -11,7 +11,7 @@ class CityDuckTypeBehavior implements TypeBehaviorStrategy
      */
     public function __construct()
     {
-        $this->type = "Duck type of City";
+        $this->type = 'Duck type of City';
     }
 
     public function type(): string

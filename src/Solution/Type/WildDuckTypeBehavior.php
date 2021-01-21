@@ -11,7 +11,7 @@ class WildDuckTypeBehavior implements TypeBehaviorStrategy
      */
     public function __construct()
     {
-        $this->type = "Duck type of Wild";
+        $this->type = 'Duck type of Wild';
     }
 
     public function type(): string

@@ -11,7 +11,7 @@ class DecoyDuckTypeBehavior implements TypeBehaviorStrategy
      */
     public function __construct()
     {
-        $this->type = "Duck type of Decoy";
+        $this->type = 'Duck type of Decoy';
     }
 
     public function type(): string

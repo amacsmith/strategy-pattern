@@ -1,8 +1,6 @@
 <?php
 
-
 namespace AMacSmith\StrategyPattern\Solution\Fly;
-
 
 class JetFlyBehavior implements FlyBehaviorStrategy
 {

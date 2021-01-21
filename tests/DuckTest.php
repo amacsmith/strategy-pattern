@@ -1,9 +1,9 @@
 <?php
 
-
 namespace AMacsmith\StrategyPattern\Tests;
 
 use AMacSmith\StrategyPattern\Solution\Display\CityDuckDisplayBehavior;
+use AMacSmith\StrategyPattern\Solution\Duck;
 use AMacSmith\StrategyPattern\Solution\DuckFactory;
 use AMacSmith\StrategyPattern\Solution\Ducks\CityDuck;
 use AMacSmith\StrategyPattern\Solution\Ducks\CustomDuck;
@@ -13,7 +13,6 @@ use AMacSmith\StrategyPattern\Solution\Ducks\MallardDuck;
 use AMacSmith\StrategyPattern\Solution\Ducks\RubberDuck;
 use AMacSmith\StrategyPattern\Solution\Ducks\WildDuck;
 use AMacSmith\StrategyPattern\Solution\DuckTypes;
-use AMacSmith\StrategyPattern\Solution\Duck;
 use AMacSmith\StrategyPattern\Solution\Eat\CanNotEatBehavior;
 use AMacSmith\StrategyPattern\Solution\Fly\JetFlyBehavior;
 use AMacSmith\StrategyPattern\Solution\Quack\NormalQuackBehavior;
@@ -27,7 +26,7 @@ class DuckTest extends TestCase
         $duckTypes = DuckTypes::$types;
         $ducks = [];
 
-        foreach($duckTypes as $type) {
+        foreach ($duckTypes as $type) {
             $ducks[] = DuckFactory::make($type);
         }
 
@@ -89,7 +88,7 @@ class DuckTest extends TestCase
         $this->expectException(\TypeError::class);
 
         $ducks = [
-            DuckFactory::make(new MallardDuck())
+            DuckFactory::make(new MallardDuck()),
         ];
 
         foreach ($ducks as $duck) {
